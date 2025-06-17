@@ -4,7 +4,6 @@ class BlackScholes:
 
     @staticmethod
     def call_price(S, K, T, r, sigma):
-        """Calculate the Black-Scholes call option price."""
         d1 = (math.log(S / K) + (r + 0.5 * sigma ** 2) * T) / (sigma * math.sqrt(T))
         d2 = d1 - sigma * math.sqrt(T)
         N_d1 = BlackScholes._norm_cdf(d1)
@@ -14,11 +13,10 @@ class BlackScholes:
     
     @staticmethod
     def put_price(S, K, T, r, sigma):
-        """Calculate the Black-Scholes put option price."""
         d1 = (math.log(S / K) + (r + 0.5 * sigma ** 2) * T) / (sigma * math.sqrt(T))
         d2 = d1 - sigma * math.sqrt(T)
-        N_d1 = BlackScholes._norm_cdf(d1)
-        N_d2 = BlackScholes._norm_cdf(d2)
+        N_d1 = BlackScholes._norm_cdf(-d1)
+        N_d2 = BlackScholes._norm_cdf(-d2)
         perContract =  (K * math.exp(-r * T) * N_d2 - S * N_d1) * 100
         return perContract
     
