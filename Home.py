@@ -1,7 +1,4 @@
 import streamlit as st
-from black_scholes import BlackScholes
-import pandas as pd
-import numpy as np
 
 st.title("PRICE THIS OPTION!")
 st.markdown("""

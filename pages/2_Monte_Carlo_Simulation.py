@@ -1,7 +1,6 @@
 import streamlit as st
 import matplotlib.pyplot as plt
 import seaborn as sns
-import pandas as pd
 import numpy as np
 from monte_carlo import simulate_gbm_path, price_option
 

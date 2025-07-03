@@ -1,6 +1,4 @@
 from black_scholes import BlackScholes
-import math
-import sys
 
 
 # read evaluate process loop
