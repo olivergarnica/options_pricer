@@ -8,8 +8,8 @@ class BlackScholes:
         d2 = d1 - sigma * math.sqrt(T)
         N_d1 = BlackScholes._norm_cdf(d1)
         N_d2 = BlackScholes._norm_cdf(d2)
-        perContract = (S * N_d1 - K * math.exp(-r * T) * N_d2) * 100
-        return perContract
+        perShare = (S * N_d1 - K * math.exp(-r * T) * N_d2)
+        return perShare
     
     @staticmethod
     def put_price(S, K, T, r, sigma):
@@ -17,8 +17,8 @@ class BlackScholes:
         d2 = d1 - sigma * math.sqrt(T)
         N_d1 = BlackScholes._norm_cdf(-d1)
         N_d2 = BlackScholes._norm_cdf(-d2)
-        perContract =  (K * math.exp(-r * T) * N_d2 - S * N_d1) * 100
-        return perContract
+        perShare =  (K * math.exp(-r * T) * N_d2 - S * N_d1)
+        return perShare
     
     @staticmethod
     def _norm_cdf(x):
